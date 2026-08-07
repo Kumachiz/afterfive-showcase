@@ -4,36 +4,15 @@ This document intentionally stays above the level of production source code and 
 
 ## System boundaries
 
-AfterFive can be understood as four connected layers:
-
-1. **Event acquisition**  
-   External event and ticketing sources provide candidate event data.
-
-2. **Normalization and application data**  
-   Source data is transformed into a consistent application model suitable for product use.
-
-3. **Operations and moderation**  
-   Admin and organizer workflows control quality, lifecycle, ownership, approval, featured state, and recurring behavior.
-
-4. **Consumer experience**  
-   The web application turns approved event data into a fast, mobile-oriented discovery experience.
+AfterFive uses private application, data, integration, and content-operations layers to support its public consumer experience. Detailed boundaries, data flows, privileged workflows, and implementation choices are intentionally not documented here.
 
 ## Design principles
 
 ### Production isolation
 New functionality is developed and validated without casually mutating production data or configuration.
 
-### Deterministic readiness
-Operational readiness should be based on explicit checks rather than a cosmetic score.
-
-### Controlled changes
-Where practical, higher-impact editor changes can be previewed before being applied and supported by undo/redo behavior.
-
-### Data quality is a product feature
-Missing imagery, incomplete event records, duplicates, ownership problems, and source inconsistencies directly affect the consumer experience, so data health is surfaced operationally.
-
-### Recurring events need explicit rules
-Recurring series are modeled intentionally rather than relying on manual duplication. Frequency, occurrence count, ownership, and lifecycle defaults need predictable behavior.
+### Operational quality
+Data quality, controlled publishing, and regression safety are treated as product concerns without publishing the supporting internal workflows.
 
 ## What is intentionally not public
 

@@ -23,8 +23,8 @@ Core product themes include:
 
 ## Building beyond the consumer UI
 
-A discovery product is only as good as its underlying event data.
+A discovery product is only as good as the information supporting the consumer experience.
 
-That makes ingestion, moderation, ownership, recurring events, editing, readiness checks, and admin workflows part of the product—not back-office afterthoughts.
+AfterFive therefore includes private internal content operations and quality controls rather than treating operations as an afterthought.
 
 The production implementation remains private, but this case study documents the system-level thinking behind the product.

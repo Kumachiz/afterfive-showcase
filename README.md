@@ -12,7 +12,7 @@ It brings relevant events into a focused multi-city experience built around R&B,
 
 ## What I built
 
-AfterFive combines consumer discovery with the operational tooling needed to keep event data useful and manageable.
+AfterFive combines consumer discovery with private internal systems that keep event information useful and manageable.
 
 ### Consumer experience
 - Multi-city nightlife discovery
@@ -21,56 +21,33 @@ AfterFive combines consumer discovery with the operational tooling needed to kee
 - Featured and curated event surfaces
 - Event imagery and structured event details
 
-### Operations and data
-- External event-data ingestion
-- Moderation and approval workflows
-- Event editing and lifecycle management
-- Data-health and readiness checks
-- Recurring event-series support
-- Organizer/admin workflows
-
-### Product tooling
-- Internal site and content controls
-- Structured editing workflows
-- Change-plan / review patterns before applying edits
-- Undo / redo patterns
-- Brand and presentation controls
+### Internal operations
+- Internal content operations
+- Data-quality and publishing workflows
+- Product presentation controls
 
 ## Technology
 
 | Area | Technology |
 |---|---|
 | Application | Next.js, React, TypeScript |
-| Data | Supabase, PostgreSQL |
+| Data | Managed relational datastore |
 | Hosting | Vercel |
 | Product format | Responsive web app / PWA |
-| Integrations | External event and ticketing APIs |
+| Integrations | Third-party data services |
 | Delivery | Git + GitHub, automated QA and staged deployments |
 
 ## High-level architecture
 
-```mermaid
-flowchart LR
-    A[Event & ticketing sources] --> B[Ingestion / normalization]
-    B --> C[(Application data)]
-    C --> D[Moderation & operations]
-    D --> C
-    C --> E[AfterFive web experience]
-    F[Organizer / admin workflows] --> D
-    E --> G[People finding what to do tonight]
-```
-
-The public diagram is intentionally high level. Internal schemas, credentials, privileged routes, provider configuration, and implementation-specific production logic are not published here.
+The public product is supported by private application, data, integration, and content-operations layers. Their internal boundaries, schemas, workflows, credentials, privileged routes, provider configuration, and implementation-specific production logic are not published here.
 
 ## Engineering focus
 
 The project has required more than building UI. The work includes:
 
 - translating a product concept into a maintainable data model
-- integrating third-party event sources
-- separating ingestion, moderation, and consumer presentation
-- building operational controls for non-code workflows
-- designing recurring-event behavior and ownership rules
+- integrating third-party data services
+- building maintainable internal content operations
 - handling QA and regression safety as the feature surface expands
 - maintaining production isolation while new functionality is staged
 
